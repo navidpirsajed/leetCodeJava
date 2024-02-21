@@ -24,4 +24,28 @@ public class Problem3Test {
         assertEquals(3, solution.lengthOfLongestSubstring("pwwkew"),
                 "The length of the longest substring without repeating characters in 'pwwkew' should be 3.");
     }
+
+    @Test
+    public void testLengthOfLongestSubstringExample4() {
+        assertEquals(3, solution.lengthOfLongestSubstring("dvdf"),
+                "The length of the longest substring without repeating characters in 'dvdf' should be 3.");
+    }
+
+    @Test
+    public void testLengthOfLongestSubstringExample5() {
+        assertEquals(1, solution.lengthOfLongestSubstring("   "),
+                "The length of the longest substring without repeating characters in '   ' should be 1.");
+    }
+
+    @Test
+    public void testLengthOfLongestSubstringExample6() {
+        assertEquals(5, solution.lengthOfLongestSubstring("anviaj"),
+                "The length of the longest substring without repeating characters in 'anviaj' should be 5.");
+    }
+
+    @Test
+    public void testEmpty() {
+        assertEquals(1, solution.lengthOfLongestSubstring(" "),
+                "The length of the longest substring without repeating characters in \' \' should be 1.");
+    }
 }
