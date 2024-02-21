@@ -1,65 +1,41 @@
 package NavidPirsajed;
+
 /*
  * @lc app=leetcode id=3 lang=java
  *
  * [3] Longest Substring Without Repeating Characters
  */
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class Problem3 {
+// @lc code=start
+class Solution {
     public int lengthOfLongestSubstring(String s) {
-        int res = 0;
+        int n = s.length();
+        int maxLen = 0, start = 0;
 
-        Set<Character> buffer = new HashSet<>();
+        int[] index = new int[128];
 
-        int longestSubString = 0;
-        int currentCount = 0;
-
-        char[] arr = new char[s.length()];
-
-        for (int i = 0; i < s.length(); i++) {
-
-            if (s.charAt(i) == ' ') {
-                // ch = (ch == ' ') ? '_' : ch;
-                arr[i] = 'a';
-            } else {
-                arr[i] = s.charAt(i);
-            }
+        for (int i = 0; i < index.length; i++) {
+            index[i] = -1;
         }
 
-        s = new String(arr);
-
-        for (int i = 0; i < s.length(); i++) {
-            Character ch = s.charAt(i);
-
-            if (!buffer.add(ch)) {
-                buffer.clear();
-                buffer.add(ch);
-                currentCount = 1;
-                if (s.charAt(i - 1) != ch) {
-                    buffer.add(s.charAt(i - 1));
-                    currentCount++;
-                }
-            } else {
-                currentCount++;
-            }
-            longestSubString = (longestSubString < currentCount) ? currentCount : longestSubString;
+        for (int i = 0; i < n; i++) {
+            start = Math.max(index[s.charAt(i)], start);
+            maxLen = Math.max(i - start + 1, maxLen);
+            index[s.charAt(i)] = i + 1;
         }
 
-        res = longestSubString;
-
-        return res;
-
+        return maxLen;
     }
+}
 
-    // @lc code=start
-    // Main method for testing
+// @lc code=end
+
+/**
+ * Problem3
+ */
+public class Problem3 extends Solution {
     public static void main(String[] args) {
-        Problem3 solution = new Problem3();
-        System.out.println(solution.lengthOfLongestSubstring("anviaj"));
-
+        Solution solution = new Solution();
+        System.out.println(solution.lengthOfLongestSubstring("abcs"));
     }
-    // @lc code=end
 }
