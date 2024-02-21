@@ -9,10 +9,10 @@ A collection of Java solutions for LeetCode problems, designed to sharpen proble
 
 ## Getting Started
 
-1. **Clone the repository** to get started with the solutions:
+1. **Clone the repository** to get started with the solutions:  
    `git clone https://github.com/navidpirsajed/leetCodeJava/`
 
-2. **Run JUnit tests** to validate the solutions. To the test execute:
+2. **Run JUnit tests** to validate the solutions. To the test execute:  
    `./gradlew test`
 
 3. **Explore the solutions and contribute:** Feel free to improve upon existing solutions or add new ones.
